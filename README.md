@@ -1,9 +1,17 @@
-# Map Maker 2D — standalone HTML
+# Map Maker 2D
 
-A browser version of the Unity Map Maker. **Double-click `index.html`** (works from `file://`, no server, no
-internet, no build step). Paint a **grid of land squares** that mesh into coastline, draw **custom rivers**, drop the 868 sprites on top as
-**stickers**, then press **✓ Finish & Download PNG**.
+Make hand-painted fantasy maps for tabletop games, stories, or game levels, right in your browser. Paint land and water, draw rivers, and drop in 868 built-in art stickers (forests, mountains, coasts and more). Then download your map as a PNG or save it as JSON for Unity.
 
+It runs **100% offline**. There's no install, no account, no internet, and no AI service, and everything stays on your computer.
+
+## Quick start
+1. Click the green **Code** button above, choose **Download ZIP**, and unzip it anywhere.
+2. Double-click **`index.html`**. It opens in Chrome, Edge or Firefox.
+3. A sample map loads. Press **L** to paint land, **V** to draw a river, and pick stickers from the **Palette** on the left.
+4. Click **✓ Finish & Download PNG** to save your map as an image.
+5. Press **?** inside the app at any time to see every shortcut.
+
+Your work autosaves in the browser. Use **Save JSON** (or Ctrl+S) to keep a copy you can reopen later or move to another computer.
 ## Workflow
 1. Pick a sprite in the **Palette** (left): biome tabs with counts, ★ favourites (hover a thumbnail → ☆), Recent,
    search (`swamp`, `alp 01`, `features`…), thumbnail size, names, Random (R), "Shuffle on place".
@@ -39,8 +47,7 @@ Work is **autosaved** to this browser's localStorage. On first run the example m
 The map has a square grid (cell size 0.1–2 units; default 0.32, set under **Map → Land grid**). Every square is one
 type: **Deep water, Shallow water, Sand, Grass, Dirt, Forest, Swamp, Ice, Rock, Lava**. The squares are *not* drawn as
 hard blocks. Neighbouring squares **mesh together**: the edges are blended and noise-warped into natural coastline. Land
-next to water gets a **sandy rim and white foam**, and the shallows fade out into the textured deep ocean, as in your
-reference image. Transitions between land types are blended too.
+next to water gets a **sandy rim and white foam**, and the shallows fade out into the textured deep ocean, for a hand-painted fantasy map look. Transitions between land types are blended too.
 
 * Modes: **Paint** (square or round brush, 1–24 squares), **Rect**, **Fill** (flood), **Island** (drag a box to
   generate a natural island with peaks and forest), **Pick**. **Alt**-drag erases back to deep water.
@@ -180,3 +187,6 @@ Smoke tests: `pip install playwright pillow`, then `python tools/test_playwright
 - Plug & play: the land mask is a ~40-cell grid per sprite, so very thin spits may be dropped
   or rounded; bridges use the dominant land type nearby; warp is limited to ~16% of a sticker's
   size; foam/surf painted into the art is treated as water, rocky shallows stay part of the art.
+
+## License
+[MIT](LICENSE) © 2026 WabbitInc. All art was made by WabbitInc for this project.
